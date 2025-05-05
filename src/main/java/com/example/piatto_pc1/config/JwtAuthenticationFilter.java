@@ -1,7 +1,7 @@
 package com.example.piatto_pc1.config;
 
-import com.example.piatto_pc1.domain.JwtService;
-import com.example.piatto_pc1.domain.UserDetailsServiceImpl;
+import com.example.piatto_pc1.service.JwtService;
+import com.example.piatto_pc1.service.UserDetailsServiceImpl;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;

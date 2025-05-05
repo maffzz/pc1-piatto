@@ -1,6 +1,6 @@
 package com.example.piatto_pc1.config;
 
-import com.example.piatto_pc1.domain.UserDetailsServiceImpl;
+import com.example.piatto_pc1.service.UserDetailsServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

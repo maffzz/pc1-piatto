@@ -1,7 +1,7 @@
 package com.example.piatto_pc1.controller;
 
 import com.example.piatto_pc1.domain.Plato;
-import com.example.piatto_pc1.domain.PlatoService;
+import com.example.piatto_pc1.service.PlatoService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;

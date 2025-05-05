@@ -1,6 +1,11 @@
-package com.example.piatto_pc1.domain;
+package com.example.piatto_pc1.service;
 
+import com.example.piatto_pc1.domain.Pedido;
+import com.example.piatto_pc1.domain.Plato;
+import com.example.piatto_pc1.domain.Usuario;
 import com.example.piatto_pc1.dto.CrearPedidoDTO;
+import com.example.piatto_pc1.exception.Conflict;
+import com.example.piatto_pc1.exception.NotFound;
 import com.example.piatto_pc1.repository.PedidoRepository;
 import com.example.piatto_pc1.repository.PlatoRepository;
 import com.example.piatto_pc1.repository.UsuarioRepository;
@@ -23,7 +28,7 @@ public class PedidoService {
         Map<String, Integer> cantidadPorPlato = dto.getCantidadPorPlato();
         List<Plato> platos = platoRepository.findAllByNombreIn(new ArrayList<>(cantidadPorPlato.keySet()));
         if (platos.size() != cantidadPorPlato.size()) {
-            throw new RuntimeException("uno o más platos no existen en el sistema");}
+            throw new NotFound("uno o más platos no existen en el sistema");}
         Pedido pedido = new Pedido();
         pedido.setUsuario(usuario);
         pedido.setCantidadPorPlato(cantidadPorPlato);
@@ -32,10 +37,12 @@ public class PedidoService {
 
     public List<Pedido> getPedidosByUsuario(String nombreDeUsuario) {
         Usuario usuario = usuarioRepository.findByNombreDeUsuario(nombreDeUsuario);
+        if (usuario == null) {
+            throw new NotFound("usuario no encontrado");}
         return pedidoRepository.findPedidosByUsuario(usuario);}
 
     public void eliminarPedido(Long id) {
         Pedido pedido = pedidoRepository.findById(id).orElseThrow(() -> new RuntimeException("pedido no encontrado"));
         if (pedido.getIsPrepared() == true) {
-            throw new RuntimeException("no se puede eliminar un pedido preparado");}
+            throw new Conflict("no se puede eliminar un pedido preparado");}
         pedidoRepository.deleteById(id);}}

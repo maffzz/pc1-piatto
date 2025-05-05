@@ -1,4 +1,4 @@
-package com.example.piatto_pc1.domain;
+package com.example.piatto_pc1.service;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;

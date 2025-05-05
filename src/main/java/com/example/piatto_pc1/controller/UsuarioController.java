@@ -1,7 +1,7 @@
 package com.example.piatto_pc1.controller;
 
 import com.example.piatto_pc1.domain.Usuario;
-import com.example.piatto_pc1.domain.UsuarioService;
+import com.example.piatto_pc1.service.UsuarioService;
 import com.example.piatto_pc1.dto.ActualizarUsuarioDTO;
 import com.example.piatto_pc1.dto.MostrarUsuarioDTO;
 import jakarta.validation.Valid;

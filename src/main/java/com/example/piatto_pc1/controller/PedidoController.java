@@ -1,7 +1,7 @@
 package com.example.piatto_pc1.controller;
 
 import com.example.piatto_pc1.domain.Pedido;
-import com.example.piatto_pc1.domain.PedidoService;
+import com.example.piatto_pc1.service.PedidoService;
 import com.example.piatto_pc1.dto.CrearPedidoDTO;
 import com.example.piatto_pc1.dto.PedidoResponseDTO;
 import jakarta.validation.Valid;

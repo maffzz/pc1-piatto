@@ -1,6 +1,6 @@
 package com.example.piatto_pc1.controller;
 
-import com.example.piatto_pc1.domain.AuthenticationService;
+import com.example.piatto_pc1.service.AuthenticationService;
 import com.example.piatto_pc1.domain.Usuario;
 import com.example.piatto_pc1.dto.JwtAuthenticationResponse;
 import com.example.piatto_pc1.dto.SigninRequest;

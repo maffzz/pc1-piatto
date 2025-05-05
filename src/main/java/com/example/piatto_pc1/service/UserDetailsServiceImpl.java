@@ -1,5 +1,5 @@
 
-package com.example.piatto_pc1.domain;
+package com.example.piatto_pc1.service;
 
 import com.example.piatto_pc1.repository.UsuarioRepository;
 import lombok.RequiredArgsConstructor;
